@@ -451,9 +451,9 @@ static int get_coco_image_id(char *filename)
 static void print_cocos(FILE *fp, char *image_path, detection *dets, int num_boxes, int classes, int w, int h)
 {
     int i, j;
-    //int image_id = get_coco_image_id(image_path);
-    char *p = basecfg(image_path);
-    int image_id = atoi(p);
+    int image_id = get_coco_image_id(image_path);
+    // char *p = basecfg(image_path);
+    // int image_id = atoi(p);
     for (i = 0; i < num_boxes; ++i) {
         float xmin = dets[i].bbox.x - dets[i].bbox.w / 2.;
         float xmax = dets[i].bbox.x + dets[i].bbox.w / 2.;
